@@ -1,1 +1,58 @@
-<p>signup works!</p>
+<main class="container-form">
+  <div class="container-title">
+    <div class="title">
+      <img src="/Academix_logo.png" alt="Logo da Academix" />
+      <h1>Crie sua conta</h1>
+    </div>
+
+    <div class="subtitle">
+      <h3>Cadastre-se para ter acesso</h3>
+    </div>
+  </div>
+
+  <form action="" class="signup-form">
+    <div class="container-inputs">
+      <div class="input-container">
+        <label for="">Nome Completo</label>
+        <input placeholder="Seu nome" type="text" />
+      </div>
+
+      <div class="input-container">
+        <label for="">Data de Nascimento</label>
+        <input type="date" />
+      </div>
+
+      <div class="input-container">
+        <label for="">Curso</label>
+        <input placeholder="Seu curso" type="text" />
+      </div>
+
+      <div class="input-container">
+        <label for="">E-mail</label>
+        <input placeholder="Seu email" type="email" />
+      </div>
+
+      <div class="input-container">
+        <label for="">Senha</label>
+        <input placeholder="Senha" type="password" />
+      </div>
+
+      <div class="input-container">
+        <label for="">Confirmar Senha</label>
+        <input placeholder="Repetir senha" type="password" />
+      </div>
+    </div>
+
+    <div class="privacy-policy">
+      <label for="">
+        <input type="checkbox" />
+
+        Ao criar uma conta na Academix, concordo com a <a href="#">Política de Privacidade</a>
+      </label>
+    </div>
+
+    <a class="signup-button" href="#">CRIAR CONTA</a>
+
+    <label for="">Já tem uma conta? <a routerLink="/login">Entrar</a></label>
+  </form>
+</main>

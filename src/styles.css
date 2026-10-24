@@ -14,3 +14,7 @@ html {
 a {
   text-decoration: none;
 }
+
+:root {
+  --title-color: #1b305a;
+}
