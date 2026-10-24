@@ -1,0 +1,142 @@
+h1 {
+  color: #1b305a;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 1.4rem;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: rgb(207, 223, 236);
+  background-image: url('../../../../public/students.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+  padding: 30px;
+  border-radius: 15px;
+  background-color: #fff;
+  box-shadow: 0 0 13px rgba(0, 0, 0, 0.5);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  text-align: left;
+}
+
+.form-group label {
+  font-size: 0.95rem;
+}
+
+.input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-container svg {
+  position: absolute;
+  left: 10px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 10px 40px;
+  border: 1px solid #b6c2cf;
+  border-radius: 5px;
+  font-size: 1rem;
+  text-align: center;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.input-container input:focus {
+  border-color: #2772c5;
+  box-shadow: 0 0 0 3px rgba(39, 114, 197, 0.15);
+}
+
+.forgot-password {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.remember input {
+  width: 16px;
+  height: 16px;
+  accent-color: #2772c5;
+  cursor: pointer;
+}
+
+.login-button {
+  width: 50%;
+  padding: 10px;
+  border-radius: 35px;
+  background-color: #2772c5;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.login-button:hover {
+  transform: scale(1.05);
+  background-color: #1f5fa5;
+  text-decoration: none;
+}
+
+a {
+  color: #2772c5;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.signup {
+  margin: 0;
+  font-size: 0.9rem;
+}
