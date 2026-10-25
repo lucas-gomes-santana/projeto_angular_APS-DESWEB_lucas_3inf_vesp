@@ -13,45 +13,51 @@
   <form action="" class="signup-form">
     <div class="container-inputs">
       <div class="input-container">
-        <label for="">Nome Completo</label>
-        <input required placeholder="Seu nome" type="text" />
+        <label for="name">Nome Completo</label>
+        <input id="name" name="name" required placeholder="Seu nome" type="text" />
       </div>
 
       <div class="input-container">
-        <label for="">Data de Nascimento</label>
-        <input required type="date" required />
+        <label for="birth-date">Data de Nascimento</label>
+        <input id="birth-date" name="birth-date" required type="date" required />
       </div>
 
       <div class="input-container">
-        <label for="">Curso</label>
-        <input placeholder="Seu curso" type="text" />
+        <label for="course">Curso</label>
+        <input required id="course" name="course" placeholder="Seu curso" type="text" />
       </div>
 
       <div class="input-container">
-        <label for="">E-mail</label>
-        <input required placeholder="Seu email" type="email" />
+        <label for="email">E-mail</label>
+        <input id="email" name="email" required placeholder="Seu email" type="email" />
       </div>
 
       <div class="input-container">
-        <label for="">Senha</label>
-        <input required placeholder="Senha" type="password" />
+        <label for="password">Senha</label>
+        <input id="password" name="password" required placeholder="Senha" type="password" />
       </div>
 
       <div class="input-container">
-        <label for="">Confirmar Senha</label>
-        <input required placeholder="Repetir senha" type="password" />
+        <label for="repeat-password">Confirmar Senha</label>
+        <input
+          id="repeat-password"
+          name="repeat-password"
+          required
+          placeholder="Repetir senha"
+          type="password"
+        />
       </div>
     </div>
 
     <div class="privacy-policy">
-      <label for="">
-        <input required type="checkbox" />
+      <label for="privacy-policy">
+        <input id="privacy-policy" required type="checkbox" />
 
         Ao criar uma conta na Academix, concordo com a <a href="#">Política de Privacidade</a>
       </label>
     </div>
 
-    <a class="signup-button" href="#">CRIAR CONTA</a>
+    <a class="signup-button" routerLink="/home">CRIAR CONTA</a>
 
     <label for="">Já tem uma conta? <a routerLink="/login">Entrar</a></label>
   </form>
