@@ -10,31 +10,66 @@
     </div>
   </div>
 
-  <form action="" class="signup-form">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" action="" class="signup-form">
     <div class="container-inputs">
       <div class="input-container">
         <label for="name">Nome Completo</label>
-        <input id="name" name="name" required placeholder="Seu nome" type="text" />
+        <input
+          id="name"
+          name="name"
+          formControlName="name"
+          required
+          placeholder="Seu nome"
+          type="text"
+        />
       </div>
 
       <div class="input-container">
         <label for="birth-date">Data de Nascimento</label>
-        <input id="birth-date" name="birth-date" required type="date" required />
+        <input
+          id="birth-date"
+          name="birth-date"
+          formControlName="birthDate"
+          required
+          type="date"
+          required
+        />
       </div>
 
       <div class="input-container">
         <label for="course">Curso</label>
-        <input required id="course" name="course" placeholder="Seu curso" type="text" />
+        <input
+          required
+          id="course"
+          name="course"
+          formControlName="course"
+          placeholder="Seu curso"
+          type="text"
+        />
       </div>
 
       <div class="input-container">
         <label for="email">E-mail</label>
-        <input id="email" name="email" required placeholder="Seu email" type="email" />
+        <input
+          id="email"
+          name="email"
+          formControlName="email"
+          required
+          placeholder="Seu email"
+          type="email"
+        />
       </div>
 
       <div class="input-container">
         <label for="password">Senha</label>
-        <input id="password" name="password" required placeholder="Senha" type="password" />
+        <input
+          id="password"
+          name="password"
+          formControlName="password"
+          required
+          placeholder="Senha"
+          type="password"
+        />
       </div>
 
       <div class="input-container">
@@ -42,6 +77,7 @@
         <input
           id="repeat-password"
           name="repeat-password"
+          formControlName="repeatPassword"
           required
           placeholder="Repetir senha"
           type="password"
@@ -51,13 +87,25 @@
 
     <div class="privacy-policy">
       <label for="privacy-policy">
-        <input id="privacy-policy" required type="checkbox" />
+        <input id="privacy-policy" formControlName="privacyPolicy" required type="checkbox" />
 
         Ao criar uma conta na Academix, concordo com a <a href="#">Política de Privacidade</a>
       </label>
     </div>
 
-    <a class="signup-button" routerLink="/home">CRIAR CONTA</a>
+    @if (
+      (form.controls.name.touched && form.controls.name.invalid) ||
+      (form.controls.birthDate.touched && form.controls.birthDate.invalid) ||
+      (form.controls.course.touched && form.controls.course.invalid) ||
+      (form.controls.email.touched && form.controls.email.invalid) ||
+      (form.controls.password.touched && form.controls.password.invalid) ||
+      (form.controls.repeatPassword.touched && form.controls.repeatPassword.invalid) ||
+      (form.controls.privacyPolicy.touched && form.controls.privacyPolicy.invalid)
+    ) {
+      <small class="error">Todos os campos são obrigatórios</small>
+    }
+
+    <button class="signup-button" type="submit">CRIAR CONTA</button>
 
     <label for="">Já tem uma conta? <a routerLink="/login">Entrar</a></label>
   </form>

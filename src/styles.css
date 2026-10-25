@@ -17,4 +17,5 @@ a {
 
 :root {
   --title-color: #1b305a;
+  --error-color: red;
 }

@@ -167,6 +167,6 @@ a:hover {
 }
 
 .error {
-  color: red;
+  color: var(--error-color);
   font-weight: bold;
 }

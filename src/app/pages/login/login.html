@@ -74,10 +74,7 @@
         </div>
       </div>
 
-      @if (
-        (form.controls.email.touched && form.controls.email.invalid) ||
-        (form.controls.password.touched && form.controls.password.invalid)
-      ) {
+      @if (form.controls.email.invalid || form.controls.password.invalid) {
         <small class="error">E-mail e senha são obrigatórios</small>
       }
 
