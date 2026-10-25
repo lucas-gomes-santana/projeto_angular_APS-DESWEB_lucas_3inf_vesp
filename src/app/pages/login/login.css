@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   background-image: url('/students.jpeg');
   background-size: cover;
   background-position: center;
@@ -134,6 +134,7 @@
   width: 50%;
   padding: 10px;
   border-radius: 35px;
+  border: 1px solid;
   background-color: #2772c5;
   color: #fff;
   font-weight: bold;
@@ -148,6 +149,7 @@
   transform: scale(1.05);
   background-color: #1f5fa5;
   text-decoration: none;
+  cursor: pointer;
 }
 
 a {
@@ -162,4 +164,9 @@ a:hover {
 .signup {
   margin: 0;
   font-size: 0.9rem;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
 }

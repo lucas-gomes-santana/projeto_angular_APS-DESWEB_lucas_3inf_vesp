@@ -2,7 +2,7 @@
   <div class="login-container">
     <div class="container-title">
       <div class="title">
-        <img src="/Academix_logo.png" alt="Logo da Academix" />
+        <img src="/Academix_logo.jpeg" alt="Logo da Academix" />
         <h1>Bem vindo ao Academix</h1>
       </div>
 
@@ -11,7 +11,7 @@
       </div>
     </div>
 
-    <form class="login-form" action="">
+    <form class="login-form" [formGroup]="form" (ngSubmit)="onSubmit()" action="">
       <div class="form-group">
         <label for="email">Email:</label>
 
@@ -32,7 +32,14 @@
             <rect x="2" y="4" width="20" height="16" rx="2" />
           </svg>
 
-          <input id="email" name="email" type="email" placeholder="Email" required />
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="Email"
+            required
+            formControlName="email"
+          />
         </div>
       </div>
 
@@ -56,20 +63,34 @@
             <path d="M7 11V7a5 5 0 0 1 10 0v4" />
           </svg>
 
-          <input id="password" name="password" type="password" placeholder="Senha" required />
+          <input
+            id="password"
+            name="password"
+            type="password"
+            placeholder="Senha"
+            required
+            formControlName="password"
+          />
         </div>
       </div>
 
+      @if (
+        (form.controls.email.touched && form.controls.email.invalid) ||
+        (form.controls.password.touched && form.controls.password.invalid)
+      ) {
+        <small class="error">E-mail e senha são obrigatórios</small>
+      }
+
       <div class="forgot-password">
         <label class="remember" for="remember">
-          <input id="remember" name="remember" type="checkbox" />
+          <input id="remember" name="remember" type="checkbox" formControlName="remember" />
           Lembrar-me
         </label>
 
         <a href="#">Esqueceu a senha?</a>
       </div>
 
-      <a class="login-button" routerLink="/home">ENTRAR</a>
+      <button type="submit" class="login-button">ENTRAR</button>
 
       <p class="signup">
         Não possui login?
