@@ -85,6 +85,10 @@
       </div>
     </div>
 
+    @if (form.hasError('passwordsMismatch') && form.controls.repeatPassword.dirty) {
+      <small class="error">As senhas não coincidem</small>
+    }
+
     <div class="privacy-policy">
       <label for="privacy-policy">
         <input id="privacy-policy" formControlName="privacyPolicy" required type="checkbox" />

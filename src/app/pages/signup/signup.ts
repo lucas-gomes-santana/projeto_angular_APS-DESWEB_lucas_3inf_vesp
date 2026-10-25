@@ -1,5 +1,11 @@
 import { Component, inject } from '@angular/core';
-import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormBuilder,
+  Validators,
+  ReactiveFormsModule,
+  AbstractControl,
+  ValidationErrors,
+} from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 
 @Component({
@@ -12,15 +18,30 @@ export class Signup {
   private fb = inject(FormBuilder);
   private router = inject(Router);
 
-  form = this.fb.nonNullable.group({
-    name: ['', Validators.required],
-    birthDate: ['', Validators.required],
-    course: ['', Validators.required],
-    email: ['', [Validators.required, Validators.email]],
-    password: ['', Validators.required],
-    repeatPassword: ['', Validators.required],
-    privacyPolicy: [false, Validators.requiredTrue],
-  });
+  form = this.fb.nonNullable.group(
+    {
+      name: ['', Validators.required],
+      birthDate: ['', Validators.required],
+      course: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required],
+      repeatPassword: ['', Validators.required],
+      privacyPolicy: [false, Validators.requiredTrue],
+    },
+
+    {
+      validators: (control: AbstractControl): ValidationErrors | null => {
+        const password = control.get('password')?.value;
+        const repeatPassword = control.get('repeatPassword')?.value;
+
+        if (!password || !repeatPassword) {
+          return null;
+        }
+
+        return password === repeatPassword ? null : { passwordsMismatch: true };
+      },
+    },
+  );
 
   onSubmit() {
     if (this.form.invalid) {
