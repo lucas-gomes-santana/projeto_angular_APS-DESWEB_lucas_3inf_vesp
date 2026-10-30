@@ -1,11 +1,143 @@
 .body-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   min-height: 100vh;
+  color: var(--ink);
   background-image: url('/students.jpeg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+app-header {
+  display: block;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(10px);
+}
+
+.main-container {
+  width: min(960px, 100% - 32px);
+  margin: 150px auto 32px;
+}
+
+.message {
+  padding: 16px 22px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.message h2 {
+  margin: 0;
+  font-size: clamp(1.2rem, 2.4vw, 1.8rem);
+  text-transform: uppercase;
+}
+
+.content-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin-top: 22px;
+}
+
+.academic-resume,
+.next-activities,
+.courses-and-subjects,
+.notices {
+  padding: 18px;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
+}
+
+.card-title {
+  margin: 0 0 14px;
+  font-size: 1.4rem;
+}
+
+.resume-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.resume-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.circle {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: conic-gradient(var(--blue) calc(var(--value) * 1%), var(--track) 0);
+}
+
+.circle::before {
+  content: '';
+  position: absolute;
+  inset: 9px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.circle-info {
+  position: relative;
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.circle-info2 {
+  margin: 8px 0 0;
+  line-height: 1.25;
+}
+
+.simple-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.simple-list li {
+  padding: 10px 0;
+  line-height: 1.3;
+}
+
+.simple-list li + li {
+  border-top: 1px solid #ddd;
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.course-tile {
+  padding: 12px;
+  border-radius: 10px;
+  background: var(--tone);
+}
+
+.course-tile h4 {
+  margin: 0 0 6px;
+  font-size: 0.95rem;
+}
+
+.course-tile a {
+  color: var(--ink);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.course-tile a:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
 }
